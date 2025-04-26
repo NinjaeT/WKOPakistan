@@ -1,0 +1,48 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: Django",
+      "type": "debugpy",
+      "request": "launch",
+      "args": ["runserver"],
+      "django": true,
+      "autoStartBrowser": false,
+      "program": "${workspaceFolder}\\backend\\manage.py",
+      "envFile": "${workspaceFolder}\\backend\\.env"
+    },
+    {
+      "name": "Make Migrations",
+      "type": "debugpy",
+      "request": "launch",
+      "args": ["makemigrations"],
+      "django": true,
+      "autoStartBrowser": false,
+      "program": "${workspaceFolder}\\backend\\manage.py",
+      "envFile": "${workspaceFolder}\\backend\\.env"
+    },
+    {
+      "name": "Migrate",
+      "type": "debugpy",
+      "request": "launch",
+      "args": ["migrate"],
+      "django": true,
+      "autoStartBrowser": false,
+      "program": "${workspaceFolder}\\backend\\manage.py",
+      "envFile": "${workspaceFolder}\\backend\\.env"
+    },
+    {
+      "name": "Pip Install",
+      "type": "debugpy",
+      "request": "launch",
+      "args": ["install", ""],
+      "django": true,
+      "autoStartBrowser": false,
+      "program": "${workspaceFolder}\\venv\\Scripts\\pip.exe",
+      "envFile": "${workspaceFolder}\\backend\\.env"
+    }
+  ]
+}
