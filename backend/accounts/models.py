@@ -26,7 +26,7 @@ DAN_CHOICES = [
     ("7th", "7th"),
     ("8th", "8th"),
     ("9th", "9th"),
-    ]
+]
 
 
 class UserProfile(models.Model):
@@ -46,6 +46,9 @@ class UserProfile(models.Model):
         default=None,
     )
 
+    def __str__(self):
+        return self.user.username
+
 
 class FamilyProfile(models.Model):
     family_name = models.CharField(max_length=100)  # e.g. “Khilji Brothers”
@@ -55,3 +58,6 @@ class FamilyProfile(models.Model):
     family_members = models.ManyToManyField(
         UserProfile, related_name="families_members"
     )
+
+    def __str__(self):
+        return self.family_name
