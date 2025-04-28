@@ -28,6 +28,14 @@ DAN_CHOICES = [
     ("9th", "9th"),
 ]
 
+KYU_CHOICES = [
+    ("1st-2nd", "1st-2nd"),
+    ("3rd-4th", "3rd-4th"),
+    ("5th-6th", "5th-6th"),
+    ("7th-8th", "7th-8th"),
+    ("9th-10th", "9th-10th"),
+]
+
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -44,6 +52,16 @@ class UserProfile(models.Model):
         null=True,
         blank=True,
         default=None,
+    )
+    kyu = models.CharField(
+        max_length=6,
+        choices=KYU_CHOICES,
+        null=True,
+        blank=True,
+        default=None,
+    )
+    profile_picture = models.ImageField(
+        upload_to="profile_pictures/", default="profile_pictures/default.jpg"
     )
 
     def __str__(self):
